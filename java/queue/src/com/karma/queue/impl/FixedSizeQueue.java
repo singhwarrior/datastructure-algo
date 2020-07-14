@@ -1,6 +1,6 @@
 package com.karma.queue.impl;
 
-import java.util.List;
+import java.util.List
 
 import com.karma.queue.Queue;
 
