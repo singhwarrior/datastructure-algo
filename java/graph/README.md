@@ -98,7 +98,8 @@ private void dfs(Graph g, int vertex) {
 }
 ```
 
-Following are some of the important points about DFS:
+Properties:
+
 - Time taken by DFS is sum of the degree of all nodes
 - Once DFS is executed, whether two nodes are connected to each other can be identified in constant time
 - Once DFS is executed, path between two nodes can be identified in linear time i.e. equal to path length
@@ -106,11 +107,54 @@ Following are some of the important points about DFS:
 
 ### BFS
 
-Breadth first search is more efficient Graph Traversal Technique compared to DFS. 
+Breadth first search is more efficient Graph Traversal Technique compared to DFS.
+
+```Java
+private void bfs(Graph g, int sourceVertex) {
+	queue.add(sourceVertex);
+	marked[sourceVertex] = true;
+	while(!queue.isEmpty()) {
+		Integer vertex = queue.remove();
+		for(Integer adjVertex : g.adj(vertex)) {
+			if(!marked[adjVertex]) {
+				queue.add(adjVertex);
+				marked[adjVertex] = true;
+				edgeTo[adjVertex] = vertex;
+			}
+		}
+	}
+}
+```
+Properties:
 
 - The path given by BFS is the shorted path between the vertices
 
+### Connected Components
 
+If a graph has many smaller disconnected graphs, Connect Components algorithm gives the nodes of graph which are connected to each other and for each connected graph provides an id. So we can see all nodes/vertices within a connected component of a graph. 
+
+CCClient code shows how to run Connected Component algorithm by passing a graph as follows. Also after that we can get total count of connected components by calling count() on the cc object. 
+
+```Java
+CC cc = new CC(g);
+System.out.println(cc.count());
+```
+
+Following code snippet in CCClient shows how can we get all vertices within a connected component.
+
+```Java
+for(int i=0; i<cc.count(); i++) {
+	System.out.println(cc.verticesInCC(i));
+}
+```
+
+On the other side following code snippet show how can we get the connected component each vertex belong to.
+
+```Java
+for(int v=0; v<g.V(); v++) {
+	System.out.println(v+"-->"+cc.cc(v));
+}
+```
 
 
 
