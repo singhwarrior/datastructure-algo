@@ -98,11 +98,18 @@ private void dfs(Graph g, int vertex) {
 }
 ```
 
+Following are some of the important points about DFS:
+- Time taken by DFS is sum of the degree of all nodes
+- Once DFS is executed, whether two nodes are connected to each other can be identified in constant time
+- Once DFS is executed, path between two nodes can be identified in linear time i.e. equal to path length
+- Each and every vertex only visited only once
+
 ### BFS
 
-Breadth first search is more efficient Graph Traversal Technique compared to DFS. Reason is as follows:
+Breadth first search is more efficient Graph Traversal Technique compared to DFS. 
 
-1. 
+- The path given by BFS is the shorted path between the vertices
+
 
 
 

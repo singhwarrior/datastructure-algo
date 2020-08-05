@@ -1,6 +1,6 @@
 package com.karma.graph;
 
-public class DfsClients {
+public class PathsClients {
 	public static void main(String[] args) {
 		Graph g = new Graph(6);
 		g.addEdge(0, 1);
