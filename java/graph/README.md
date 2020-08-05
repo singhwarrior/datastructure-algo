@@ -129,7 +129,7 @@ Properties:
 
 - The path given by BFS is the shorted path between the vertices
 
-### Connected Components
+# Connected Components
 
 If a graph has many smaller disconnected graphs, Connect Components algorithm gives the nodes of graph which are connected to each other and for each connected graph provides an id. So we can see all nodes/vertices within a connected component of a graph. 
 
