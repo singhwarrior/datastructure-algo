@@ -156,7 +156,72 @@ for(int v=0; v<g.V(); v++) {
 }
 ```
 
+# Graph Problems
 
+### Identifying graph is Bipartite?
+
+If graph vertices can be divided into two sets such that there is no direct edge between vertices of the individual sets. On the other side, there is only edge beteween vertices from one set to another set. 
+
+We can identify this easily by coloring the vertices by two colors when we traverse the graph(either of the two traversals BFS and DFS). If two adjacent vertices are colored with same color, then it will not a bipartite graph.
+
+Code snippet in BFS:
+
+```Java
+public static Boolean isBipartite(Graph g, int v) {
+	Boolean[] marked = Collections.nCopies(g.V(), false).toArray(new Boolean[0]);
+	COLOUR[] coloured = Collections.nCopies(g.V(), null).toArray(new COLOUR[0]);
+	Queue<Integer> queue = new LinkedList<Integer>();
+		
+	marked[v] = true;
+	coloured[v] = COLOUR.WHITE;
+	queue.add(v);
+		
+	while(!queue.isEmpty()) {
+		int vertex = queue.remove();
+		for(int adj:g.adj(vertex)) {
+			if(marked[adj] && coloured[adj] == coloured[vertex]) {
+				return false;
+			}
+			if(!marked[adj]) {
+				marked[adj] = true;
+				coloured[adj] = complement(coloured[vertex]);
+				queue.add(adj);
+			}
+		}
+	}
+	return true;
+}
+```
+
+Code snippet in DFS:
+
+```Java
+public static Boolean isBipartite_dfs(Graph g, int v) {
+	Boolean[] marked = Collections.nCopies(g.V(), false).toArray(new Boolean[0]);
+	COLOUR[] coloured = Collections.nCopies(g.V(), null).toArray(new COLOUR[0]);
+		
+	coloured[v] = COLOUR.WHITE;
+	return dfs(g, v, marked, coloured);
+		
+}
+	
+private static Boolean dfs(Graph g, int v, Boolean[] marked, COLOUR[] coloured) {	
+	marked[v] = true;
+	for(int adj:g.adj(v)) {
+		if(marked[adj] && coloured[adj] == coloured[v]) {
+			return false;
+		}
+		if(!marked[adj]) {
+			marked[adj] = true;
+			coloured[adj] = complement(coloured[v]);
+			if(!dfs(g, adj, marked, coloured)) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+```
 
 
  
