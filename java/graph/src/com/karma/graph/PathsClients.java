@@ -24,6 +24,12 @@ public class PathsClients {
 			System.out.println(dfsPathsfor5.pathTo(i));
 		}
 		
+		Paths dfsStackPaths = new DfsStackPaths(g, 0);
+		for(int i=1; i<g.V(); i++) {
+			System.out.println(dfsStackPaths.hasPathTo(i));
+			System.out.println(dfsStackPaths.pathTo(i));
+		}
+		
 		System.out.println("============================================");
 		
 		Paths bfsPaths = new BfsPaths(g, 0);

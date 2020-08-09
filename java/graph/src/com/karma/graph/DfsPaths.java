@@ -39,7 +39,7 @@ public class DfsPaths implements Paths{
 		this.marked[vertex] = true;		
 		for(int ver : g.adj(vertex)) {
 			if(!marked[ver]) {
-				this.marked[ver] = true;
+//				this.marked[ver] = true;
 				this.edgeTo[ver] = vertex; 
 				dfs(g, ver);				
 			}

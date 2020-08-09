@@ -11,6 +11,11 @@ Graph data structure is a set of Edges and Vertices. It has following practical 
 
 Adjacency List implementation has been used here. Which is much more cost effective compared to Adjacency Matrix or edges as list.
 
+
+<p align="center">
+  <img src="img/adjacny_list.png" width="350" title="hover text">
+</p>
+
 Index of array *adj* in *Graph* object represents each vertex and the content of array is a *List<Integer>* contains all vertices adjacent to current vertex.
  
 ```Java
@@ -98,12 +103,20 @@ private void dfs(Graph g, int vertex) {
 }
 ```
 
+<p align="center">
+  <img src="img/DFS.png" width="350" title="hover text">
+</p>
+
 Properties:
 
 - Time taken by DFS is sum of the degree of all nodes
 - Once DFS is executed, whether two nodes are connected to each other can be identified in constant time
 - Once DFS is executed, path between two nodes can be identified in linear time i.e. equal to path length
 - Each and every vertex only visited only once
+
+### DFS(Stack based)
+
+
 
 ### BFS
 
@@ -125,6 +138,12 @@ private void bfs(Graph g, int sourceVertex) {
 	}
 }
 ```
+
+
+<p align="center">
+  <img src="img/BFS.png" width="350" title="hover text">
+</p>
+
 Properties:
 
 - The path given by BFS is the shorted path between the vertices
