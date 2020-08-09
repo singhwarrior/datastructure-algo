@@ -246,5 +246,40 @@ private static Boolean dfs(Graph g, int v, Boolean[] marked, COLOUR[] coloured) 
 }
 ```
 
+### Is cycle exists?
+
+This problem can be solved by DFS. If a vertex is being visited and one of it adjacent is already visited provided that the adjacent should not be the one from where we came to current vertex then we can say there is a cycle in the graph.
+
+```Java
+public static Boolean hasCycle(Graph g, Integer v, Boolean[] marked, Integer[] edgeTo) {
+		marked[v] = true;
+		for(Integer adj:g.adj(v)) {
+			if(marked[adj] && v!=null && adj!=null && edgeTo[v] != adj)
+				return true;
+			if(!marked[adj]) {
+				edgeTo[adj] = v;
+				return hasCycle(g, adj, marked, edgeTo);
+			}
+		}
+		return false;
+	}
+```
+
+### Euler Cycle: Is there a cycle which visits every edge only once?
+
+This problem can be solved using DFS in linear time. A graph whose every vertex is having even degree then there will be definitely one cycle which visits every edge once. Finding this cycle is possible by DFS.
+
+
+### Hamiltonian Cycle or Travelling Sales Person Pronlem: Is there a cycle exists which visits every vertex once?
+
+This is NP-Complete problem and there is no efficient mechanism to solve it. 
+
+### Two graphs are identical or not?
+
+There is no efficient mechanism to identify whether two graphs are identical or not. First of all name of the vertex of one graph need to be changed and then each and every edge need to be compared. There are n! way to arrange the vertex  which is very large for large graphs.
+ 
+
+
+
 
  

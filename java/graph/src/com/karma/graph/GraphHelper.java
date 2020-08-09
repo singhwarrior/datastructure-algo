@@ -64,7 +64,7 @@ public class GraphHelper {
 				return true;
 			if(!marked[adj]) {
 				edgeTo[adj] = v;
-				hasCycle(g, adj, marked, edgeTo);
+				return hasCycle(g, adj, marked, edgeTo);
 			}
 		}
 		return false;
