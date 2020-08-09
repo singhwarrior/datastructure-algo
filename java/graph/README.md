@@ -116,7 +116,11 @@ Properties:
 
 ### DFS(Stack based)
 
+Depth first search can also be implemented using stack. It is implemented in DfsStackPaths class.
 
+<p align="center">
+  <img src="img/DFS_stack.png" width="350" title="hover text">
+</p>
 
 ### BFS
 
