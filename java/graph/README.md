@@ -86,7 +86,7 @@ for(int i=1; i<g.V(); i++) {
 
 ### DFS
 
-Depth first search is less efficient Graph Traversal Technique. Reason is total time taken to traverse is equal to sum of degrees of all vertices. Also the path returned from DFS is not guaranteed to be shortest path between source and destination node. 
+Depth first search is less efficient Graph Traversal Technique. Reason is total time taken to traverse is equal to **sum of degrees** of all vertices. Also the path returned from DFS is not guaranteed to be shortest path between source and destination node. 
 
 The implementation here is recursive but it can be done using Stack as well.
 
@@ -183,7 +183,7 @@ for(int v=0; v<g.V(); v++) {
 
 ### Identifying graph is Bipartite?
 
-If graph vertices can be divided into two sets such that there is no direct edge between vertices of the individual sets. On the other side, there is only edge beteween vertices from one set to another set. 
+If graph vertices can be divided into two sets such that there is no direct edge between vertices of the individual sets. On the other side, there is only edge between vertices from one set to another set. 
 
 We can identify this easily by coloring the vertices by two colors when we traverse the graph(either of the two traversals BFS and DFS). If two adjacent vertices are colored with same color, then it will not a bipartite graph.
 
