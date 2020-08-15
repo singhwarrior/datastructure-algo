@@ -186,3 +186,29 @@ So following proof tells that maximum height of tree can be log<sub>2</sub>N.
 <p align="center">
   <img src="img/ht-proof.png" width="350" title="hover text">
 </p>
+
+# CompressedPath Weighted Quick Union(Further improvement to Quick Union)
+
+While identifying root both in case of union or connected function call, the tree height is compressed because both of them uses root function. And hence root function is little different from WeightedQuickUnion.
+
+```Java
+public Integer root(Integer i) {
+	while(i!=id[i]) {
+		id[i] = id[id[i]];
+		i = id[i];
+	}
+	return i;
+}
+```
+
+Whenever root function is called(inside union(p,q) or connected(p,q)) while identifying root it also compresses path. It every iteration until root is not identified, the every object starts pointing to its grandparent. Hence if we are doing M objects union and connected operations, it will be M\*log<sub>2</sub>N in case of weighted quick-union but in case of compressed path it will be M\*log<sup>\*</sup><sub>2</sub>N. 
+
+log<sup>\*</sup><sub>2</sub>N = log<sub>2</sub>(log<sub>2</sub>(log<sub>2</sub>(...(log<sub>2</sub>N)...))). That means height of tree almost flattened.
+
+Hence our union and connected operation becomes equal to log<sup>\*</sup><sub>2</sub>N. 
+
+As we can see below that by calling only one root(i) the tree height has decreased by 1. 
+
+<p align="center">
+  <img src="img/compressed-path.png" width="350" title="hover text">
+</p> 

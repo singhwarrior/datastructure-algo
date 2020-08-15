@@ -18,8 +18,8 @@ package com.karma.unionfind;
  */
 public class WeightQuickUnion implements UF{
 
-	private Integer[] id;
-	private Integer[] sz;
+	protected Integer[] id;
+	protected Integer[] sz;
 	
 	public WeightQuickUnion(Integer N) {
 		id = new Integer[N];
