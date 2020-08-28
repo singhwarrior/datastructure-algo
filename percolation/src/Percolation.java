@@ -146,6 +146,8 @@ public class Percolation {
 		System.out.println(percolation.isOpen(1, 2));
 		System.out.println(percolation.isOpen(1, 3));
 		System.out.println(percolation.isOpen(1, 4));
+		
+		
 		System.out.println(percolation.numberOfOpenSites());
 		
 //		while(!percolation.percolates()) {
