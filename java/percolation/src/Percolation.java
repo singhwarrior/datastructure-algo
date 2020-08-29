@@ -1,6 +1,17 @@
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
+/**
+ * Percolation is simulation of a grid of size N*N. Each cell is called 
+ * a site. A site can be opened or closed. This can be used to do simulation
+ * of such systems where current, water, liquid can flow via open sites and 
+ * not from closed sites. But in this solution we identify whether anything
+ * can flow from top row to bottom row. From one site to another site can 
+ * allow to flow if the upper, left, right is open for it.
+ * 
+ * @author singh_warrior
+ *
+ */
 public class Percolation {
 	
 	private Boolean[] sites;
@@ -9,7 +20,19 @@ public class Percolation {
 	private int openSites;
 	
 	/**
-	 * creates n-by-n grid, with all sites initially blocked
+	 * creates n-by-n grid, with all sites initially blocked. It is represented 
+	 * by sites array of size n*n. To check whether two sites are connected with
+	 * each other is done by WeightedQuickUnionUF.
+	 * 
+	 * Here WeightedQuickUnionUF has been created with size of n*n+2. The two 
+	 * extra virtual cells are created. One above top row and one below bottom row.
+	 * Both virtual nodes are considered to open. The reason to use these two extra
+	 * virtual sites is to make the performance faster. If these two virtual sites
+	 * are connected to each other that mean grid percolates. If these two virtual 
+	 * sites are not there in that case, it needs to be checked each bottom site
+	 * is connected to any of the site of top row. In worst case this can take 
+	 * T(N) ~ N*N*log N. But on the other hand keeping virtual node can finish it 
+	 * within log N. 
 	 * 
 	 * @param n
 	 */
