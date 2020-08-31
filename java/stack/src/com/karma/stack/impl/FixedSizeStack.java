@@ -34,13 +34,16 @@ public class FixedSizeStack<T> implements Stack<T> {
 	}
 
 	@Override
-	public void pop() throws StackEmptyException {
+	public T pop() throws StackEmptyException {
+		T element = null;
 		if(!isEmpty()) {
+			element = elements.get(top);
 			elements.remove(top);
 			top--;
 		}else {
 			throw new StackEmptyException();
 		}
+		return element;
 	}
 
 	@Override
