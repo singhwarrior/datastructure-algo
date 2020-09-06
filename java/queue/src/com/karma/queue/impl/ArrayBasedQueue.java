@@ -10,6 +10,7 @@ public class ArrayBasedQueue<T> implements Queue<T>{
 	private int head;
 	private int tail;
 	
+	@SuppressWarnings("unchecked")
 	public ArrayBasedQueue() {
 		elements = (T[]) new Object[1];
 		head = -1;
@@ -32,6 +33,7 @@ public class ArrayBasedQueue<T> implements Queue<T>{
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public T dequeue() throws EmptyQueueException {
 		if(isEmpty())
@@ -42,11 +44,11 @@ public class ArrayBasedQueue<T> implements Queue<T>{
 		
 		N--;
 
-		if(head == elements.length)
-			head = 0;
-		
 		T element = elements[head];
 		elements[head++] = null;
+		
+		if(head == elements.length)
+			head = 0;
 		
 		if(isEmpty()) {
 			elements = (T[]) new Object[1];
@@ -66,7 +68,8 @@ public class ArrayBasedQueue<T> implements Queue<T>{
 	public boolean isEmpty() {
 		return N == 0;
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	private void resize(int size) {
 		T[] resized_elements = (T[]) new Object[size];
 	
