@@ -1,3 +1,18 @@
+# Sorting Algorithms
+
+### Selection Sort
+
+### Insertion Sort
+
+### Shell Sort
+
+### Bubble Sort
+
+### Quick Sort
+
+### Merge Sort
+
+
 ###Quick Sort
 A sorting algorithm which is a divide and conquer based algorithm. It is in place algorithm.
 

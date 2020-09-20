@@ -63,7 +63,7 @@ All operations of LinkedListBasedStack implementation can be done in constant ti
 The space/memory consumed by a linked list based array will be ~32N. 
 
 <p align="left">
-  <img src="img/linkedlistbasedstack_mem.png" width="350" title="hover text">
+  <img src="img/linkedlistbasedq_mem.png" width="350" title="hover text">
 </p>
 
 # Array Based Queue
