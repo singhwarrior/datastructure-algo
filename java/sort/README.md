@@ -70,3 +70,8 @@ Merge Sort is another ** Divide and Conquer Algorithm**. Here we keep on dividin
 - **Is Stable?:** Yes, keeps order for equal elements.
 
 <img src="img/merge_sort_tn.png" width="500" title="Merge Sort">
+
+
+# Usage
+
+Other than general usage of sorting algorithm one of the very good usecase is solving the problem of convex hull. i.e. identifying a convex polygon which can accomodate multiple points given inside this polygon.
