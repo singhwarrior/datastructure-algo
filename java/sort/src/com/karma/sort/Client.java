@@ -38,6 +38,13 @@ public class Client {
 		String[] array1 = new String[]{"B", "A", "C", "D", "E"};
 		SortHelper.print(bw, " ", SortableFactory.SORTABLE.QUICK_SORT, array1);
 		
+		array1 = new String[]{"B", "A", "C", "D", "E"};
+		HeapSort.sort(array1);
+		
+		for(String s : array1) {
+			System.out.print(s+" ");
+		}
+		
 		bw.close();
 		
 	}
