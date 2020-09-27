@@ -34,6 +34,10 @@ Queue data structure different implementations(Array Based and List based). Usag
 
 Different sorting algorithms, their explanation and implementations can be seen here. 
 
+### priority queue & heap
+
+Both Priority Queue and Heap data structures are part of project priority-queue.  
+
 # Part 2
 
 ### graph
