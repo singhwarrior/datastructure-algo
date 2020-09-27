@@ -247,7 +247,10 @@ private void sink(int idx) {
 - To implement heap sort
 
 
+# Problems
 
-
+- Identify median (find the median in constant time and remove it in logarithmic time)
+- Randomized Priority Queue
+- Taxicab Numbers (Find all taxicab numbers with a,b,c,d less than n)
 
 
