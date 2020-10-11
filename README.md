@@ -36,7 +36,11 @@ Different sorting algorithms, their explanation and implementations can be seen 
 
 ### priority queue & heap
 
-Both Priority Queue and Heap data structures are part of project priority-queue.  
+Both Priority Queue and Heap data structures are part of project priority-queue.
+
+### Symbol Table
+
+Different implementations of Symbol Table based on BST, Red Black Trees and Hashing.
 
 # Part 2
 
