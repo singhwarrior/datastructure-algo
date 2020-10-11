@@ -108,7 +108,7 @@ Some of the operations are shown below:
 BST can be used as an implementation of Symbol Table but it does not give a guarantee that it will always give the O(log<sub>2</sub>N) performance. Hence in worst case depending on the way the keys are inserted to BST operations can take O(N) time complexity. Hence we look for a balanced BST.
 
 
-
+### Binary Search Tree(BST) Based Implementation
 
 
 
