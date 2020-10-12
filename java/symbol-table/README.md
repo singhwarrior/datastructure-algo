@@ -108,8 +108,48 @@ Some of the operations are shown below:
 BST can be used as an implementation of Symbol Table but it does not give a guarantee that it will always give the O(log<sub>2</sub>N) performance. Hence in worst case depending on the way the keys are inserted to BST operations can take O(N) time complexity. Hence we look for a balanced BST.
 
 
-### Binary Search Tree(BST) Based Implementation
+### Balanced BST Based Implementation
 
+As vanilla BST does not give guarantee of always getting running time of O(log<sub>2</sub>N) hence to make sure we get guaranteed performance of O(log<sub>2</sub>N) height balanced BSTs are used. 
 
+AVL Tree, 2-3 Trees and Red Black Trees are the one which make sure that height can be kept balanced.
 
+### AVL Tree
+
+Check out project tree in which details of AVL Tree has been explained. It makes sure that height of AVL tree does not grow in linear fashion but it will be in logarithmic order.
+
+### 2-3 Tree
  
+2-3 Tree is a data structure have following properties:
+
+- A node can have minimum 1 key and maximum 2 keys. Hence a node can have minimum 2 children or maximum 3 children
+- All leaf nodes are always at same height
+- If the key to be inserted to a node and node does not have space then node will be splitted and middle key will be promoted to parent. If parent also does not have space i.e. contains 2 keys already then parent also is splitted and mid key is promoted until a parent having space accomodates the key. If the promotion happened till root and root also dont have space then root will be splitted and mid key will be promoted and made as root. In this case **height of tree increases by 1**.
+- Delete operation is just a reverse. If the node which has the key to be deleted contains 2 keys then key can be deleted from the node. But if the node has only single key and it need to be deleted then it will borrow one key from its sibling. If sibling also has only one key then the it is merged with sibling and one key is borrowed down from parent. But if the same scenario is there with parent i.e. single key then this process of borrow and merge will happen until sibling has a key or parent has key. If it reaches till root and root also has only one key the **height of the tree will be decreased by 1**.
+
+
+##### Insert operation in 2-3 tree
+
+<img src="img/23_insert.png" width="500" title="Time Complexity"> 
+
+##### Delete operation in 2-3 tree
+
+<img src="img/23_del.png" width="500" title="Time Complexity"> 
+
+Generalization of 2-3 tree is A-B Tree or B Trees. But usually 2-3 tree is hard to implement. 
+
+##### Pros
+
+Hence height of a 2-3 tree can be : **log<sub>3</sub>N &lt; height &lt; log<sub>2</sub>N**. Hence all operations in 2-3 trees can be done within height of the tree i.e. in the range of **(log<sub>3</sub>N,log<sub>2</sub>N)**.
+
+##### Cons
+
+Hard to implement because there are many cases to handle.
+
+
+### Red Black Tree based Symbol Table Implementation
+
+
+
+
+
