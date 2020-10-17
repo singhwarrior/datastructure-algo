@@ -92,6 +92,12 @@ public class Digraph {
 		return count;
 	}
 	
+	/**
+	 * This function will change the direction of all edges. This is
+	 * useful in one of the elegant algorithm called Kosaraju's Algorithm.
+	 * 
+	 * @return Directed Graph where all directed edges are reversed for original directed graph.
+	 */
 	public Digraph reverse() {
 		Digraph reverse = new Digraph(this.V);
 		

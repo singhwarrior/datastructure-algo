@@ -1,7 +1,19 @@
 package com.karma.digraph;
 
 /**
+ * Strongly Connected Components are part of directed graph in which
+ * every vertex is reachable from every other vertex.
  * 
+ * This is very important to understand how many connected components
+ * in the graph are available. StronglyCC class can be used to check 
+ * whether two vertices are connected to each-other. To identify the 
+ * strongly connected components in a graph, is done in two steps:
+ * 
+ * 1. First reversal of Directed Graph is done. i.e. Direction of all
+ * the edges is reverted. (Please check the README.md file to 
+ * understand why it is done so.)
+ * 2. DFS is done on the reverse postorder sequence of the graph 
+ * reverted in step 1. 
  * 
  * @author singhwarrior
  *
@@ -35,6 +47,13 @@ public class StronglyCC {
 				
 	}
 	
+	/**
+	 * 
+	 * @param v
+	 * @param w
+	 * @return true when the vertices are connected and 
+	 * 		   belong to same connected component else false
+	 */
 	public boolean connected(int v, int w) {
 		return scc[v] == scc[w];
 	}

@@ -6,6 +6,16 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Different orders of Depth First Search can be obtained from 
+ * DigraphDfsOrder.
+ * 
+ * As the DFS is executed, there are three iterables which are
+ * also maintained which represents preorder, postorder and 
+ * reverse post order. 
+ * 
+ * @author singhwarrior
+ */
 public class DigraphDfsOrder {
 
 	private Queue<Integer> pre;
@@ -37,10 +47,16 @@ public class DigraphDfsOrder {
 		reversePost.push(v);
 	}
 
+	/**
+	 * @return iterable of all vertices which represents preorder
+	 */
 	public Iterable<Integer> preOrder() {
 		return pre;
 	}
 
+	/**
+	 * @return iterable of all vertices which represents postorder
+	 */
 	public Iterable<Integer> postOrder() {
 		return post;
 	}

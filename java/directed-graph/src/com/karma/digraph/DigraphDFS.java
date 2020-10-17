@@ -3,21 +3,38 @@ package com.karma.digraph;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * DigraphDFS does the Depth First Search for a directed graph.
+ * Using the Depth First Search, reachability problem can be 
+ * solved from a given source vertex.   
+ * 
+ * @author singhwarrior
+ *
+ */
 public class DigraphDFS {
 	
-	private int[] edgeTo;
-	private boolean visited[];
+	private int[] edgeTo;       // Maintains vertex from which directed edge to vertex represented by array index 
+	private boolean visited[];  // Maintains vertex represented by array index is visited or not from source vertex.
 	
 	public DigraphDFS(Digraph g, int s) {
+		// Initialization
 		edgeTo = new int[g.V()];
-		visited = new boolean[g.V()];
-		
 		for(int i = 0; i < g.V(); i++) {
 			edgeTo[i] = -1;
 		}
+		visited = new boolean[g.V()];
+		
 		dfs(g, s);
 	}
 	
+	/**
+	 * Depth first search gets called for a given vertex and not all 
+	 * immediate neighbor vertices are visited but further one of the
+	 * adjacent vertex and same for all vertices.
+	 * 
+	 * @param g
+	 * @param s
+	 */
 	private void dfs(Digraph g, int s) {
 		visited[s] = true;
 		for(int adj : g.adj(s)) {
@@ -28,10 +45,28 @@ public class DigraphDFS {
 		}
 	}
 	
+	/**
+	 * To check the connectivity between the given source vertex and any vertex
+	 * v isConnected(int v) can be called which will return the result in form 
+	 * of true or false in O(1) time.
+	 * 
+	 * @param v
+	 * @return true if vertex v is reachable from source vertex, false otherwise
+	 */
 	public boolean isConnected(int v) {
 		return visited[v];
 	}
 	
+	/**
+	 * This function can be called to identify the path from source vertex to 
+	 * target vertex v. A linear time O(V) may take in worst case scenario for
+	 * this to return the path. The path may change depending on underlying
+	 * implementation of Directed Graph - Digraph.
+	 * 
+	 * @param v
+	 * @return vertices as Iterable which is path from source vertex to target 
+	 * 		   vertex 	 
+	 */
 	public Iterable<Integer> pathTo(int v){
 		if(!visited[v]) return new LinkedList<>();
 		List<Integer> path = new LinkedList<>();
